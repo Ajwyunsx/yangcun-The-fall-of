@@ -5466,33 +5466,35 @@ class PlayState extends MusicBeatState
 		var formattedFolder:String = Paths.formatToSongPath(SONG.song);
 		//var curStageFolder:String = curStage;
 
-		var path:String = Paths.modFolders('data/' + formattedFolder + '/script.hx');
+		var path:String = Paths.hscript(formattedFolder + '/script');
 		
-		var stagepath:String = Paths.modFolders('stages/' + curStage + '.hx');
+		var stagepath:String = Paths.hscriptstages(curStage);
 		
 
 		var hxdata:String = "";
 		
 		var hxsdata:String = "";
 		
-		var hxdataEvent:String = "";
-		
-		for (event in eventPushedMap.keys())
+		//var hxdataEvent:String = "";
+		//old error
+	/*	for (event in eventPushedMap.keys())
 		{
 			var hxToLoadEvent:String = Paths.modFolders('custom_events/' + event + '.hx');
 			if(FileSystem.exists(hxToLoadEvent))
 			{
 				hxdataEvent = File.getContent(hxToLoadEvent);
 			}
-		}
+		}*/
 
 		if (FileSystem.exists(path))
 			hxdata = File.getContent(path);
 		
 		if (FileSystem.exists(stagepath))
 			hxsdata = File.getContent(stagepath);
-
-		if (hxdata != "" || hxsdata != "" || hxdataEvent != "")
+			
+		
+        //if (hxdata != "" || hxsdata != "" || hxdataEvent != "")
+		if (hxdata != "" || hxsdata != "")
 		{
 			script = new Script();
 
@@ -5577,7 +5579,7 @@ class PlayState extends MusicBeatState
 			// PRESET CLASSES
 			script.setVariable("PlayState", instance);
 			script.setVariable("FlxTween", FlxTween);
-			//script.setVariable("FlxColor", FlxColor); error
+			script.setVariable("FlxColor", FlxColor);
 			script.setVariable("FlxEase", FlxEase);
 			script.setVariable("FlxSprite", FlxSprite);
 			script.setVariable("Math", Math);
