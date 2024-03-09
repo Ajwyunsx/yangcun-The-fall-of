@@ -33,15 +33,14 @@ class MainMenuState extends MusicBeatState
 	private var camAchievement:FlxCamera;
 	
 	var optionShit:Array<String> = [
-		'story_mode',
 		'freeplay',
 		'credits',
 		'options'
 	];
 
 	var magenta:FlxSprite;
-	var camFollow:FlxObject;
-	var camFollowPos:FlxObject;
+	//var camFollow:FlxObject;
+	//var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
 
 	override function create()
@@ -82,10 +81,10 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		camFollow = new FlxObject(0, 0, 1, 1);
+		/*camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
-		add(camFollowPos);
+		add(camFollowPos);*/
 
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.scrollFactor.set(0, yScroll);
@@ -183,7 +182,7 @@ class MainMenuState extends MusicBeatState
 		}
 
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
-		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
+		//camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
 		if (!selectedSomethin)
 		{
@@ -297,7 +296,7 @@ class MainMenuState extends MusicBeatState
 				if(menuItems.length > 4) {
 					add = menuItems.length * 8;
 				}
-				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
+				//camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
 				spr.centerOffsets();
 			}
 		});
