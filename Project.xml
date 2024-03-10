@@ -45,7 +45,7 @@
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<define name="MODS_ALLOWED" if="desktop || android" />
-	<define name="LUA_ALLOWED" if="desktop || android"/>
+	<!--<define name="LUA_ALLOWED" if="desktop || android"/>-->
 	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="VIDEOS_ALLOWED" if="web || windows || android" unless="32bits"/>
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
@@ -107,11 +107,11 @@
 	<assets path="assets/week7"         library="week7"         exclude="*.ogg" if="web"/>
 	<assets path="assets/week7"         library="week7"         exclude="*.mp3" unless="web"/>
 	
-	<section if="MODS_ALLOWED">
-		<assets path='example_mods' rename='mods' embed='false'/>
-	</section>
-	<assets path='art/readme.txt' rename='do NOT readme.txt' />
-	 <template path='mods' /> 
+	<!--<section if="MODS_ALLOWED">-->
+		<!--<assets path='example_mods' rename='mods' embed='false'/>-->
+	<!--</section>-->
+	<!--<assets path='art/readme.txt' rename='do NOT readme.txt' />-->
+	<!-- <template path='mods' /> -->
 	
 	<!-- assets path="CHANGELOG.md" rename='changelog.txt' -->
 
